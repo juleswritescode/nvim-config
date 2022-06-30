@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/completion-nvim",
     url = "https://github.com/nvim-lua/completion-nvim"
   },
-  fd = {
-    loaded = true,
-    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/fd",
-    url = "https://github.com/sharkdp/fd"
-  },
   gloombuddy = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/gloombuddy",
@@ -144,16 +139,6 @@ _G.packer_plugins = {
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-treesitter-context"] = {
-    loaded = true,
-    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
-  },
-  playground = {
-    loaded = true,
-    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -163,11 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
-  },
-  ripgrep = {
-    loaded = true,
-    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/ripgrep",
-    url = "https://github.com/BurntSushi/ripgrep"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -188,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
+  },
+  ["vim-ripgrep"] = {
+    loaded = true,
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/vim-ripgrep",
+    url = "https://github.com/jremmen/vim-ripgrep"
   }
 }
 

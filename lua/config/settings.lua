@@ -1,4 +1,3 @@
-
 vim.opt.termguicolors = true
 vim.opt.syntax = 'on'
 vim.opt.errorbells = false
@@ -18,7 +17,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 --[[ Styles --]]
-vim.opt.guifont = 'Operator_Mono:h14'
+vim.opt.guifont = 'Operator Mono:h14'
 
 --[[ Cursor --]]
 vim.opt.guicursor = 'n:block'
@@ -43,32 +42,3 @@ vim.opt.cmdheight = 3
 vim.opt.wrap = true
 
 vim.opt.isfname:append('@-@')
-
---[[ Key Mappings --]]
-vim.g.mapleader = ' '
-
-key_mapper = function(mode, key, result)
-  vim.api.nvim_set_keymap(
-    mode,
-    key,
-    result,
-    {noremap = true, silent = true}
-  )
-end
-
-key_mapper('', '<up>', '<nop>')
-key_mapper('', '<down>', '<nop>')
-key_mapper('', '<left>', '<nop>')
-key_mapper('', '<right>', '<nop>')
-
---[[ Buffer Navigation --]]
-key_mapper('', '<C-j>', ':cnext<CR>')
-key_mapper('', '<C-k>', ':cprev<CR>')
-key_mapper('n', '<leader><CR>', ':so ~/.config/nvim/init.lua<CR>')
-key_mapper('n', '<leader>vrc', ':e ~/.config/nvim/lua/config/settings.lua<CR>')
-
-
-
-
-
-
