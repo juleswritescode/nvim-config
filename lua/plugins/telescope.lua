@@ -1,8 +1,3 @@
-key_mapper('n', '<C-p>', ':lua require"telescope.builtin".find_files()<CR>', false)
-key_mapper('n', '<C-f>', ':lua require"telescope.builtin".live_grep()<CR>', false)
-key_mapper('n', '<leader>fh', ':lua require"telescope.builtin".help_tags()<CR>', false)
-key_mapper('n', '<leader>fb', ':lua require"telescope.builtin".buffers()<CR>', false)
-
 require("telescope").setup({
   defaults = {
     file_sorter = require "telescope.sorters".get_fzy_sorter,
@@ -24,5 +19,14 @@ M.search_dotfiles = function()
     hidden = true,
   })
 end
+
+local nnoremap = require "helper".nnoremap
+
+nnoremap('<leader>ff', function() require "telescope.builtin".find_files() end)
+nnoremap('<leader>ft', function() require "telescope.builtin".live_grep() end)
+nnoremap('<leader>fh', function() require "telescope.builtin".help_tags() end)
+nnoremap('<leader>fb', function() require "telescope.builtin".buffers() end)
+nnoremap('<leader>vrc', function() M.search_dotfiles() end)
+
 
 return M

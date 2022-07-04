@@ -4,16 +4,17 @@ local function overwrite_capabilities()
   require('cmp_nvim_lsp').update_capabilities(capabilities)
 end
 
+local nnoremap = require "helper".nnoremap
 local function setup_commands()
-  key_mapper('n', '<leader>gd', ':lua vim.lsp.buf.definition()<CR>')
-  key_mapper('n', '<leader>gD', ':lua vim.lsp.buf.declaration()<CR>')
-  key_mapper('n', '<leader>gi', ':lua vim.lsp.buf.implementation()<CR>')
-  key_mapper('n', '<leader>gr', ':lua vim.lsp.buf.references()<CR>')
-  key_mapper('n', '<leader>gt', ':lua vim.lsp.buf.type_definition()<CR>')
-  key_mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
-  key_mapper('n', '<c-k>', ':lua vim.lsp.buf.signature_help()<CR>')
-  key_mapper('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
-  key_mapper('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
+  nnoremap('<leader>gd', function() vim.lsp.buf.definition() end)
+  nnoremap('<leader>gD', function() vim.lsp.buf.declaration() end)
+  nnoremap('<leader>gi', function() vim.lsp.buf.implementation() end)
+  nnoremap('<leader>gr', function() vim.lsp.buf.references() end)
+  nnoremap('<leader>gt', function() vim.lsp.buf.type_definition() end)
+  nnoremap('K', function() vim.lsp.buf.hover() end)
+  nnoremap('<c-k>', function() vim.lsp.buf.signature_help() end)
+  nnoremap('<leader>ca', function() vim.lsp.buf.code_action() end)
+  nnoremap('<leader>rn', function() vim.lsp.buf.rename() end)
 end
 
 local function config(_config, server_type)

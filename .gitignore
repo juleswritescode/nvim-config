@@ -1,3 +1,4 @@
 .git/
-undodir
+undodir/
+undodir/*
 */.DSSTORE

@@ -24,6 +24,7 @@ function ContextSetup(show_all_context)
   }
 end
 
-key_mapper('n', '<leader>cth', ':lua ContextSetup(true)', false)
-key_mapper('n', '<leader>cts', ':lua ContextSetup(false)', false)
+local nnoremap = require"helper".nnoremap
+nnoremap('<leader>cth', function() ContextSetup(true) end)
+nnoremap('<leader>cts', function() ContextSetup(false) end)
 ContextSetup(false)
