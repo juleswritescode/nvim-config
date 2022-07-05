@@ -7,12 +7,20 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
     execute 'packadd packer.nvim'
 end
+
 vim.cmd('packadd packer.nvim')
 local packer = require 'packer'
 local util = require 'packer.util'
 packer.init({
     package_root = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack')
 })
+
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]])
 
 --- startup and add configure plugins
 packer.startup(function()
@@ -38,6 +46,7 @@ packer.startup(function()
     use 'tjdevries/colorbuddy.nvim'
     use 'bkegley/gloombuddy'
     use 'gruvbox-community/gruvbox'
+    use 'folke/tokyonight.nvim'
     use 'ayu-theme/ayu-vim'
 
     -- sneaking some formatting in here too
