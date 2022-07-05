@@ -1,44 +1,61 @@
-vim.opt.termguicolors = true
-vim.opt.syntax = 'on'
-vim.opt.errorbells = false
-vim.opt.shortmess:append('c')
-vim.opt.ignorecase = true
-vim.opt.showmode = false
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = vim.fn.stdpath('config') .. '/undodir'
-vim.opt.undofile = true
-vim.opt.updatetime = 50
-vim.opt.hidden = true
-vim.opt.completeopt = 'menuone,noinsert,noselect'
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
+local options = {
+  backup = false, -- do not use a backupdir (when writing to files)
+  swapfile = false, -- hell no, creates a swapfile for every opened buffer
+  undofile = true, -- enable persistent undo
+  writebackup = true, -- will create a backup before writing to a file
+  fileencoding = 'utf-8', -- the encoding the buffer is safed in
 
---[[ Styles --]]
-vim.opt.guifont = 'Operator Mono:h14'
+  cmdheight = 3, -- cmd line height below
+  pumheight = 10, -- pop up menu height
+  showmode = false, -- no messages on last line when in some mode
+  conceallevel = 0, -- make `` visible in markdown files
+  cursorline = true, -- show line on current cursor position
+  relativenumber = true,
+  number = true,
 
---[[ Cursor --]]
-vim.opt.guicursor = 'n:block'
+  completeopt = { "menuone", "noselect", "noinsert" }, -- how do deal with suggestions
+
+  hlsearch = true, -- highlight search
+  ignorecase = true, -- case insensitive search
+  smartcase = true, -- case sensitive search when uppercase letter is included
+
+  showtabline = 1, -- show tab lines when there are more than 2 stops
+  expandtab = true, -- insert spaces instead of tabs
+  tabstop = 2, -- tab with
+  shiftwidth = 2, -- spaces inserted for 1 indentation
+  softtabstop = 2, -- when pasting text
+  smarttab = true, -- use shiftwidt for tabs
+
+  smartindent = true, -- indent next line when typing i.e. { 
+  autoindent = true, -- keep indentation when hitting <CR>
+
+  splitbelow = true, -- all horizontal splits go below the current buffer
+  splitright = true, -- all vertical splits go right of the current buffer
+
+  termguicolors = true, -- more colors
+
+  syntax = 'on',
+  updatetime = 300, -- fast autocompletion for CMP
+
+  --[[ Cursor --]]
+  guicursor = 'n:block',
+
+  scrolloff = 8,
+  sidescrolloff = 8,
+  colorcolumn = '100', -- show the text-width column, width of 100
+  signcolumn = 'yes', -- always show the sign column instead of shifting content
+  wrap = true, -- wrap lines for readability
+
+}
+
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
+
+vim.opt.isfname:append('@-@')
 vim.opt.guicursor:append('o-r:hor50')
 vim.opt.guicursor:append('v:hor10')
 vim.opt.guicursor:append('i:ver10')
 vim.opt.guicursor:append('a:blinkon50-blinkoff50')
-
-vim.opt.scrolloff = 8
-vim.opt.colorcolumn = '80'
-vim.opt.formatoptions:remove('ro')
-vim.opt.signcolumn = 'yes'
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.smarttab = true
-vim.opt.expandtab = true
-vim.opt.cindent = true
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.cmdheight = 3
-vim.opt.wrap = true
-
-vim.opt.isfname:append('@-@')
+vim.opt.shortmess:append('c')
+vim.opt.formatoptions:remove('cro')

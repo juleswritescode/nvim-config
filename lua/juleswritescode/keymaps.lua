@@ -3,8 +3,9 @@ local nnoremap = require('juleswritescode.helper').nnoremap
 local vnoremap = require('juleswritescode.helper').vnoremap
 --[[ Key Mappings --]]
 
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
-nnoremap('<leader>', '<nop>')
+vim.g.maplocalleader = ' '
 
 --[[
 -- Enter Plugins specific keymaps in either the plugin file
@@ -16,9 +17,15 @@ nmap('<down>', '<nop>')
 nmap('<left>', '<nop>')
 nmap('<right>', '<nop>')
 
+--[[ Window Navigation --]]
+nnoremap('<C-h>', '<C-w>h')
+nnoremap('<C-j>', '<C-w>j')
+nnoremap('<C-k>', '<C-w>k')
+nnoremap('<C-l>', '<C-w>l')
+
 --[[ Buffer Navigation --]]
-nnoremap('<C-j>', ':cnext<CR>', { silent = true })
-nnoremap('<C-k>', ':cprev<CR>', { silent = true })
+nnoremap('<S-j>', ':cnext<CR>')
+nnoremap('<S-k>', ':cprev<CR>')
 nnoremap('<leader><CR>', ':so ~/.config/nvim/init.lua<CR>')
 
 --[[ Indentation --]]
@@ -26,7 +33,7 @@ nnoremap('<', '<gv')
 nnoremap('>', '>gv')
 
 --[[ Utilities ]] --
-nnoremap('<leader>xh', ':Vex<CR>') -- open explorer
+nnoremap('<leader>xf', ':Lex 30<CR>') -- open explorer
 nnoremap('<leader>yb', '0f{V%y') -- yank block
 nnoremap('<leader>vb', '0f{V%') -- highlight block
 nnoremap('<leader>db', '0f{V%d') -- delete block
@@ -34,5 +41,6 @@ nnoremap('<leader>cp', '"+p') -- paste from clipboard
 nnoremap('<leader>y', '"+y') -- yank into clipboard (normal)
 vnoremap('<leader>y', '"+y') -- yank into clipboard (visual)
 nnoremap('<leader>Y', 'gg"+yG') -- yank whole file into clipboard
+vnoremap('p', '"_dP') -- do not save over-pasted word 
 
 nnoremap('<leader>hs', ':set hlsearch!<CR>')
