@@ -1,6 +1,6 @@
-local nmap = require('helper').nmap
-local nnoremap = require('helper').nnoremap
-local vnoremap = require('helper').vnoremap
+local nmap = require('juleswritescode.helper').nmap
+local nnoremap = require('juleswritescode.helper').nnoremap
+local vnoremap = require('juleswritescode.helper').vnoremap
 --[[ Key Mappings --]]
 
 vim.g.mapleader = ' '

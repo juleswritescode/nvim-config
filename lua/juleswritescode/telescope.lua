@@ -20,7 +20,7 @@ M.search_dotfiles = function()
   })
 end
 
-local nnoremap = require "helper".nnoremap
+local nnoremap = require "juleswritescode.helper".nnoremap
 
 nnoremap('<leader>ff', function() require "telescope.builtin".find_files() end)
 nnoremap('<leader>ft', function() require "telescope.builtin".live_grep() end)

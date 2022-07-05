@@ -4,7 +4,7 @@ local function overwrite_capabilities()
   require('cmp_nvim_lsp').update_capabilities(capabilities)
 end
 
-local nnoremap = require "helper".nnoremap
+local nnoremap = require "juleswritescode.helper".nnoremap
 local function setup_commands()
   nnoremap('<leader>gd', function() vim.lsp.buf.definition() end)
   nnoremap('<leader>gD', function() vim.lsp.buf.declaration() end)

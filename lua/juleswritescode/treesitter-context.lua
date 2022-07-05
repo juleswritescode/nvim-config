@@ -24,7 +24,7 @@ function ContextSetup(show_all_context)
   }
 end
 
-local nnoremap = require"helper".nnoremap
+local nnoremap = require"juleswritescode.helper".nnoremap
 nnoremap('<leader>cth', function() ContextSetup(true) end)
 nnoremap('<leader>cts', function() ContextSetup(false) end)
 ContextSetup(false)
