@@ -1,4 +1,4 @@
 .git/
 undodir/
 undodir/*
-*/.DSSTORE
+.DS_Store
