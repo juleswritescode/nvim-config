@@ -89,7 +89,7 @@ M.overwrite_capabilities = function(client)
 		return
 	end
 
-	if client.name == 'tsserver' then
+	if client.name == 'tsserver' or client.name == 'volar' then
 		client.resolved_capabilities.document_formatting = false
 	end
 

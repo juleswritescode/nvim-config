@@ -23,11 +23,6 @@ nnoremap('<C-j>', '<C-w>j')
 nnoremap('<C-k>', '<C-w>k')
 nnoremap('<C-l>', '<C-w>l')
 
---[[ Buffer Navigation --]]
-nnoremap('<S-j>', ':cnext<CR>')
-nnoremap('<S-k>', ':cprev<CR>')
-nnoremap('<leader><CR>', ':so ~/.config/nvim/init.lua<CR>')
-
 --[[ Indentation --]]
 nnoremap('<', '<gv')
 nnoremap('>', '>gv')

@@ -20,6 +20,7 @@ lsp_installer.setup {
 }
 
 for _, server in pairs(servers) do
+
   local opts = {
     on_attach = require("juleswritescode.lsp.handlers").on_attach,
     capabilities = require("juleswritescode.lsp.handlers").overwrite_capabilities(server)
