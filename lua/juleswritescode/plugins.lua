@@ -2,16 +2,16 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system {
-        'git',
-        'clone',
-        '--depth',
-        '1',
-        'https://github.com/wbthomason/packer.nvim',
-        install_path
-    }
-    print "Installing Packer, close and reopen Neovim..."
-    vim.cmd [[packadd packer.nvim]]
+  PACKER_BOOTSTRAP = fn.system {
+    'git',
+    'clone',
+    '--depth',
+    '1',
+    'https://github.com/wbthomason/packer.nvim',
+    install_path
+  }
+  print "Installing Packer, close and reopen Neovim..."
+  vim.cmd [[packadd packer.nvim]]
 end
 
 vim.cmd([[
@@ -23,21 +23,15 @@ vim.cmd([[
 
 local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
-    return
+  print "Packer was not found."
+  return
 end
 
-packer.init {
-    display = {
-        open_fn = function()
-            require "packer.util".util.float { border = "rounded" }
-        end
-    }
-}
-
 --- startup and add configure plugins
-packer.startup(function(use)
+return packer.startup({
+  function(use)
     use('nvim-treesitter/nvim-treesitter', {
-        run = ':TSUpdate'
+      run = ':TSUpdate'
     })
     use('nvim-treesitter/playground')
     use('nvim-treesitter/nvim-treesitter-context')
@@ -63,21 +57,33 @@ packer.startup(function(use)
     use { 'prettier/vim-prettier', run = 'yarn install' }
 
     use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
 
     -- Autocompletion
-    use "L3MON4D3/LuaSnip"
-    use "saadparwaiz1/cmp_luasnip"
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/nvim-cmp'
-    use 'onsails/lspkind-nvim'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use "hrsh7th/cmp-nvim-lua"
+    use "saadparwaiz1/cmp_luasnip"
     use 'nvim-lua/completion-nvim'
+
+    -- snippets
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
+
 
     use 'anott03/nvim-lspinstall'
 
     -- setup plugins after downloading packer
     if PACKER_BOOTSTRAP then
-        require "packer".sync()
+      require "packer".sync()
     end
-end
-)
+  end,
+  config = {
+    open_fn = function()
+      return require "packer.util".float { border = 'rounded' }
+    end
+  }
+})

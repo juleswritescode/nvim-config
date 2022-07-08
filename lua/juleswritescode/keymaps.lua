@@ -33,7 +33,7 @@ nnoremap('<', '<gv')
 nnoremap('>', '>gv')
 
 --[[ Utilities ]] --
-nnoremap('<leader>xf', ':Lex 30<CR>') -- open explorer
+nnoremap('<leader>xf', ':Lex 25<CR>') -- open explorer
 nnoremap('<leader>yb', '0f{V%y') -- yank block
 nnoremap('<leader>vb', '0f{V%') -- highlight block
 nnoremap('<leader>db', '0f{V%d') -- delete block

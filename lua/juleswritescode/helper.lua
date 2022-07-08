@@ -17,4 +17,27 @@ M.vnoremap = bind("v")
 M.xnoremap = bind("x")
 M.inoremap = bind("i")
 
+M.dump = function(o)
+    if type(o) == 'table' then
+        local s = '{ '
+        for k, v in pairs(o) do
+            if type(k) ~= 'number' then k = '"' .. k .. '"' end
+            s = s .. '[' .. k .. '] = ' .. M.dump(v) .. ','
+        end
+        return s .. '} '
+    else
+        return tostring(o)
+    end
+end
+
+M.map = function(tbl, fn)
+    local t = {}
+
+    for k, v in pairs(tbl) do
+        t[k] = fn(v)
+    end
+
+    return t
+end
+
 return M

@@ -23,8 +23,6 @@ local options = {
   expandtab = true, -- insert spaces instead of tabs
   tabstop = 2, -- tab with
   shiftwidth = 2, -- spaces inserted for 1 indentation
-  softtabstop = 2, -- when pasting text
-  smarttab = true, -- use shiftwidt for tabs
 
   smartindent = true, -- indent next line when typing i.e. { 
   autoindent = true, -- keep indentation when hitting <CR>
