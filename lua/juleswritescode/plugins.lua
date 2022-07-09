@@ -43,7 +43,7 @@ return packer.startup({
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-project.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
-      
+
     use 'sharkdp/fd'
     use 'BurntSushi/ripgrep'
 
@@ -75,7 +75,7 @@ return packer.startup({
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
 
-
+    use "windwp/nvim-autopairs"
     use 'anott03/nvim-lspinstall'
 
     -- setup plugins after downloading packer
