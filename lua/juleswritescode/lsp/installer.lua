@@ -4,6 +4,10 @@ if not installer_status_ok then
   return
 end
 
+lsp_installer.setup {
+  automatic_installation = false
+}
+
 local config_status_ok, lspconfig = pcall(require, 'lspconfig')
 if not config_status_ok then
   print("Lsp Config not found for installer")
@@ -14,10 +18,6 @@ local servers = require "juleswritescode.helper".map(
   lsp_installer.get_installed_servers(),
   function(s) return s.name end
 )
-
-lsp_installer.setup {
-
-}
 
 for _, server in pairs(servers) do
 

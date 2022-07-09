@@ -91,18 +91,7 @@ cmp.setup({
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
 
-    ["<CR>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.mapping.confirm({ select = true })
-        cmp.close()
-        vim.cmd("stopinsert")
-      else
-        fallback()
-      end
-    end, {
-      'i',
-      'c',
-    }),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then

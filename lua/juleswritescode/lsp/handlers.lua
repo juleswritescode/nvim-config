@@ -2,7 +2,7 @@ local function has_capability(client, capability)
 	return client.resolved_capabilities[capability]
 end
 
-function setup_diagnostics()
+local function setup_diagnostics()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
@@ -71,6 +71,9 @@ local function setup_commands(bufnr)
 	nnoremap('<c-k>', function() vim.lsp.buf.signature_help() end, opts)
 	nnoremap('<leader>ca', function() vim.lsp.buf.code_action() end, opts)
 	nnoremap('<leader>rn', function() vim.lsp.buf.rename() end, opts)
+	nnoremap('<leader>ds', function() vim.diagnostic.open_float() end, opts)
+	nnoremap('<leader>dn', function() vim.diagnostic.goto_next() end, opts)
+	nnoremap('<leader>dp', function() vim.diagnostic.goto_prev() end, opts)
 end
 
 local M = {}
