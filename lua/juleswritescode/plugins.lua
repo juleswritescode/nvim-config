@@ -60,6 +60,7 @@ return packer.startup({
 
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
+    use 'anott03/nvim-lspinstall'
 
     -- Autocompletion
     use 'hrsh7th/nvim-cmp'
@@ -75,8 +76,9 @@ return packer.startup({
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
 
+    use "numToStr/Comment.nvim"
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
     use "windwp/nvim-autopairs"
-    use 'anott03/nvim-lspinstall'
 
     -- setup plugins after downloading packer
     if PACKER_BOOTSTRAP then
