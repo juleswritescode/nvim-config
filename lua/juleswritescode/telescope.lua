@@ -9,7 +9,7 @@ local sorters = require "telescope.sorters"
 local previewers = require "telescope.previewers"
 local builtin = require "telescope.builtin"
 
-local TELESCOPE_THEME = 'ivy'
+local TELESCOPE_THEME = 'horizontal'
 
 telescope.setup({
   defaults = {
@@ -22,14 +22,14 @@ telescope.setup({
     },
   },
   pickers = {
-    grep_string = { theme = TELESCOPE_THEME },
-    find_files = { theme = TELESCOPE_THEME },
-    lsp_references = { theme = TELESCOPE_THEME },
-    live_grep = { theme = TELESCOPE_THEME },
-    help_tags = { theme = TELESCOPE_THEME },
-    buffers = { theme = TELESCOPE_THEME },
-    diagnostics = { theme = TELESCOPE_THEME },
-    builtin = { theme = TELESCOPE_THEME },
+    -- grep_string = { theme = TELESCOPE_THEME },
+    -- find_files = { theme = TELESCOPE_THEME },
+    -- lsp_references = { theme = TELESCOPE_THEME },
+    -- live_grep = { theme = TELESCOPE_THEME },
+    -- help_tags = { theme = TELESCOPE_THEME },
+    -- buffers = { theme = TELESCOPE_THEME },
+    -- diagnostics = { theme = TELESCOPE_THEME },
+    -- builtin = { theme = TELESCOPE_THEME },
   },
   extensions = {
     fzy_native = {
@@ -68,18 +68,26 @@ local function search_dotfiles()
   })
 end
 
-local nnoremap = require "juleswritescode.helper".nnoremap
+local wk_ok, wk = pcall(require, "which-key")
+if not wk_ok then
+  print "Which Key not found"
+  return
+end
 
-nnoremap('<leader>fs', function() builtin.grep_string() end) -- find string
-nnoremap('<leader>ff', function() builtin.find_files() end) -- find files
-nnoremap('<leader>fr', function() builtin.lsp_references() end) -- find references
-nnoremap('<leader>ft', function() builtin.live_grep() end) -- find text
-nnoremap('<leader>fh', function() builtin.help_tags() end) -- find help tags
-nnoremap('<leader>fb', function() builtin.buffers() end) -- find buffers
-nnoremap('<leader>fp', function() builtin.diagnostics() end) -- find problems
-nnoremap('<leader>fip', function() telescope.extensions.project.project({}) end) -- find in projects
-nnoremap('<leader>fsp', function() builtin.builtin() end) -- show pickers
-nnoremap('<leader>vrc', function() search_dotfiles() end)
-
+wk.register({
+  f = {
+    name = "Find",
+    s = { function() builtin.grep_string() end, "Find String Under Cursor" }, -- find string
+    f = { function() builtin.find_files() end, "Find Files" }, -- find files
+    r = { function() builtin.lsp_references() end, "Find References Under Cursor" }, -- find references
+    t = { function() builtin.live_grep() end, "Find String" }, -- find text
+    h = { function() builtin.help_tags() end, "Find Help Tags" }, -- find help tags
+    b = { function() builtin.buffers() end, "Find Buffers" }, -- find buffers
+    p = { function() builtin.diagnostics() end, "Find Diagnostics" }, -- find problems
+    ["ip"] = { function() telescope.extensions.project.project({}) end, "Find Within Project" }, -- find in projects, <C-s> to search a string
+    ["sp"] = { function() builtin.builtin() end, "Show Available Pickers" }, -- show pickers
+    ["vrc"] = { function() search_dotfiles() end, "Search VimRC" }
+  }
+})
 
 return M

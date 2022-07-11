@@ -1,4 +1,4 @@
-function ContextSetup(show_all_context)
+function ContextSetup()
   require "treesitter-context".setup {
     enable = true,
     max_lines = 0,
@@ -24,7 +24,4 @@ function ContextSetup(show_all_context)
   }
 end
 
-local nnoremap = require "juleswritescode.helper".nnoremap
-nnoremap('<leader>cth', function() ContextSetup(true) end)
-nnoremap('<leader>cts', function() ContextSetup(false) end)
-ContextSetup(false)
+ContextSetup()

@@ -10,6 +10,7 @@ if not luasnip_status_ok then
   return
 end
 
+
 local source_map = {
   nvim_lsp = '[LSP]',
   luasnip = '[LuaSnip]',
@@ -74,7 +75,7 @@ cmp.setup({
     ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ["<C-s>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- "suggest" code completion
 
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 

@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["ayu-vim"] = {
-    loaded = true,
-    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/ayu-vim",
-    url = "https://github.com/ayu-theme/ayu-vim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -114,11 +109,6 @@ _G.packer_plugins = {
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["colorbuddy.nvim"] = {
-    loaded = true,
-    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
-    url = "https://github.com/tjdevries/colorbuddy.nvim"
-  },
   ["completion-nvim"] = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/completion-nvim",
@@ -134,15 +124,20 @@ _G.packer_plugins = {
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  gloombuddy = {
+  ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/gloombuddy",
-    url = "https://github.com/bkegley/gloombuddy"
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  gruvbox = {
+  ["gruvbox-baby"] = {
     loaded = true,
-    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/gruvbox-community/gruvbox"
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/gruvbox-baby",
+    url = "https://github.com/luisiacc/gruvbox-baby"
+  },
+  neon = {
+    loaded = true,
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/neon",
+    url = "https://github.com/rafamadriz/neon"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -183,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+  },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
   },
   playground = {
     loaded = true,
@@ -233,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

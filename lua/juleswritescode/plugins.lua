@@ -30,34 +30,33 @@ end
 --- startup and add configure plugins
 return packer.startup({
   function(use)
+    -- treesitter & syntax highlighting
     use('nvim-treesitter/nvim-treesitter', {
       run = ':TSUpdate'
     })
     use('nvim-treesitter/playground')
     use('nvim-treesitter/nvim-treesitter-context')
-
     use 'sheerun/vim-polyglot'
 
+    -- dependencies
     use 'nvim-lua/plenary.nvim'
     use 'nvim-lua/popup.nvim'
+    use 'sharkdp/fd'
+    use 'BurntSushi/ripgrep'
+
+    -- telescope
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-project.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
 
-    use 'sharkdp/fd'
-    use 'BurntSushi/ripgrep'
-
-    -- these are optional themes but I hear good things about gloombuddy ;)
-    -- colorbuddy allows us to run the gloombuddy theme
-    use 'tjdevries/colorbuddy.nvim'
-    use 'bkegley/gloombuddy'
-    use 'gruvbox-community/gruvbox'
+    -- colors
+    use "olimorris/onedarkpro.nvim"
+    use "luisiacc/gruvbox-baby"
     use 'folke/tokyonight.nvim'
-    use 'ayu-theme/ayu-vim'
+    use "rafamadriz/neon"
 
-    -- sneaking some formatting in here too
-    use { 'prettier/vim-prettier', run = 'yarn install' }
 
+    -- LSP
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     use 'anott03/nvim-lspinstall'
@@ -76,9 +75,17 @@ return packer.startup({
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
 
+    -- git
+    use "lewis6991/gitsigns.nvim"
+
+    -- tools
     use "numToStr/Comment.nvim"
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use "windwp/nvim-autopairs"
+    use { 'prettier/vim-prettier', run = 'yarn install' }
+
+    -- whichkey
+    use 'folke/which-key.nvim'
 
     -- setup plugins after downloading packer
     if PACKER_BOOTSTRAP then

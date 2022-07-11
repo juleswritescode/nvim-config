@@ -32,6 +32,6 @@ comment.setup {
   extra = {
     above = '<leader>cO',
     below = '<leader>co',
-    eol = '<leader>cA',
+    eol = '<leader>ca',
   },
 }

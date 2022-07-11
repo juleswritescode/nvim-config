@@ -59,21 +59,32 @@ local function setup_highlight_document(client)
 	]]
 end
 
-local nnoremap = require "juleswritescode.helper".nnoremap
 local function setup_commands(bufnr)
-	local opts = { buffer = bufnr }
-	nnoremap('<leader>gd', function() vim.lsp.buf.definition() end, opts)
-	nnoremap('<leader>gD', function() vim.lsp.buf.declaration() end, opts)
-	nnoremap('<leader>gi', function() vim.lsp.buf.implementation() end, opts)
-	nnoremap('<leader>gr', function() vim.lsp.buf.references() end, opts)
-	nnoremap('<leader>gt', function() vim.lsp.buf.type_definition() end, opts)
-	nnoremap('K', function() vim.lsp.buf.hover() end, opts)
-	nnoremap('<c-k>', function() vim.lsp.buf.signature_help() end, opts)
-	nnoremap('<leader>ca', function() vim.lsp.buf.code_action() end, opts)
-	nnoremap('<leader>rn', function() vim.lsp.buf.rename() end, opts)
-	nnoremap('<leader>ds', function() vim.diagnostic.open_float() end, opts)
-	nnoremap('<leader>dn', function() vim.diagnostic.goto_next() end, opts)
-	nnoremap('<leader>dp', function() vim.diagnostic.goto_prev() end, opts)
+	local opts = { buffer = bufnr, prefix = "<leader>" }
+
+	local wk_ok, wk = pcall(require, "which-key")
+	if not wk_ok then
+		print "Not setting LSP commands, WhichKey not traceable"
+		return
+	end
+
+	wk.register({
+		l = {
+			name = "LSP",
+			R = { function() vim.lsp.buf.rename() end, "Rename" },
+			a = { function() vim.lsp.buf.code_action() end, "Code Actions" },
+			k = { function() vim.diagnostic.open_float() end, "Show Diagnostics" },
+			n = { function() vim.diagnostic.goto_next() end, "Next Diagnostic" },
+			p = { function() vim.diagnostic.goto_prev() end, "Prev Diagnostic" },
+			s = { function() vim.lsp.buf.signature_help() end, "Show Signature Help" },
+			h = { function() vim.lsp.buf.hover() end, "Hover" },
+			d = { function() vim.lsp.buf.definition() end, "Goto Definition" },
+			D = { function() vim.lsp.buf.declaration() end, "Goto Declaration" },
+			i = { function() vim.lsp.buf.implementation() end, "Goto Implementation" },
+			r = { function() vim.lsp.buf.references() end, "Goto References" },
+			t = { function() vim.lsp.buf.type_definition() end, "Goto Type Definition" },
+		},
+	}, opts)
 end
 
 local M = {}
