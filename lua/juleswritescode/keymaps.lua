@@ -33,10 +33,6 @@ wk.register({
     n = { ":cnext<CR>", "Next quick fix item" },
     p = { ":cprev<CR>", "Previous quick fix item" },
   },
-  x = {
-    name = "File Explorer",
-    f = { ":Lex 25<CR>", "Open File Explorer" }
-  },
   y = {
     name = "Yank",
     b = { "0f{V%y", "Yank Block" },
@@ -54,6 +50,7 @@ wk.register({
   p = {
     name = "Pasting",
     p = { '"+p', "Paste From Clipboard" },
+    b = { '0f{%o<Esc>p', "Paste Below Block" },
   },
   ['<'] = { '<gv', "Indent Left" },
   ['>'] = { '>gv', "Indent Right" }
@@ -68,7 +65,7 @@ wk.register({
 })
 
 
-nnoremap("<C-h", "<C-w>h")
-nnoremap("<C-j", "<C-w>j")
-nnoremap("<C-k", "<C-w>k")
-nnoremap("<C-l", "<C-w>l")
+nnoremap("<C-h>", "<C-w>h")
+nnoremap("<C-j>", "<C-w>j")
+nnoremap("<C-k>", "<C-w>k")
+nnoremap("<C-l>", "<C-w>l")

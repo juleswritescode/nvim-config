@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/nvim-lspinstall",
     url = "https://github.com/anott03/nvim-lspinstall"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -178,6 +183,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["onedarkpro.nvim"] = {
     loaded = true,

@@ -84,6 +84,10 @@ return packer.startup({
     use "windwp/nvim-autopairs"
     use { 'prettier/vim-prettier', run = 'yarn install' }
 
+    -- nerd tree
+    use 'kyazdani42/nvim-web-devicons'
+    use 'kyazdani42/nvim-tree.lua'
+
     -- whichkey
     use 'folke/which-key.nvim'
 
