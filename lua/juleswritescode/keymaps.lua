@@ -24,6 +24,12 @@ nmap('<right>', '<nop>')
 
 --[[ Quickfix Navigation --]]
 wk.register({
+  w = {
+    name = "Window",
+    e = { "<C-w>=", "All Equal" },
+    v = { "<C-w>v", "Vertical Split" },
+    h = { "<C-w>s", "Horizontal Split" },
+  },
   h = {
     name = "Highlight",
     s = { ":set hlsearch<CR>", "Highlight Search" }
