@@ -114,8 +114,13 @@ nvim_tree.setup {
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 500,
+  },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    }
   },
   view = {
     width = 30,
