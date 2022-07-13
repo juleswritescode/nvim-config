@@ -86,7 +86,6 @@ nvim_tree.setup {
       git_placement = "after",
     }
   },
-  auto_close = true,
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
