@@ -29,6 +29,7 @@ wk.register({
     e = { "<C-w>=", "All Equal" },
     v = { "<C-w>v", "Vertical Split" },
     h = { "<C-w>s", "Horizontal Split" },
+    f = { "<C-w><C-w>", "Focus" },
   },
   h = {
     name = "Highlight",
