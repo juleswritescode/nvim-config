@@ -30,8 +30,8 @@ wk.register({
   },
   q = {
     name = "QuickFix",
-    n = { ":cnext<CR>", "Next quick fix item" },
-    p = { ":cprev<CR>", "Previous quick fix item" },
+    j = { ":cnext<CR>", "Next quick fix item" },
+    k = { ":cprev<CR>", "Previous quick fix item" },
   },
   y = {
     name = "Yank",
