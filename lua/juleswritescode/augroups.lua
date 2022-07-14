@@ -18,17 +18,10 @@ FormatGroup = augroup('FormatGroup', {})
 
 autocmd({ 'BufWritePre' }, {
   group = FormatGroup,
-  pattern = { '*.ts', '*.js', '*.vue', '*.json' },
-  command = 'Prettier'
-})
-
-autocmd({ 'BufWritePre' }, {
-  group = FormatGroup,
-  pattern = { '*.lua' },
+  pattern = { '*' },
   callback = function()
     vim.lsp.buf.formatting_sync()
   end
-
 })
 
 LspGroup = augroup('LspGroup', {})

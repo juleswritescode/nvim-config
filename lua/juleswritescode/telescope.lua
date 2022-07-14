@@ -81,7 +81,7 @@ wk.register({
     ["<CR>"] = { function() builtin.current_buffer_fuzzy_find() end, "Find In Buffer" },
     m = { function() builtin.marks() end, "Find Marks" },
     o = { function() builtin.vim_options() end, "Find Vim Options" },
-    d = { function() builtin.git_bcommits() end, "Find Diffs in Commits" },
+    C = { function() builtin.git_bcommits() end, "Find Diffs in Commits" },
     c = { function() builtin.command_history() end, "Find Command History" },
     k = { function() builtin.colorscheme() end, "Find (K)Colorschemes" },
     h = { function() builtin.search_history() end, "Find Search history" },
@@ -89,9 +89,9 @@ wk.register({
     f = { function() builtin.find_files() end, "Find Files" }, -- find files
     r = { function() builtin.lsp_references() end, "Find References Under Cursor" }, -- find references
     t = { function() builtin.live_grep() end, "Find Text" }, -- find text
-    -- h = { function() builtin.help_tags() end, "Find Help Tags" }, -- find help tags
+    H = { function() builtin.help_tags() end, "Find Help Tags" }, -- find help tags
     b = { function() builtin.buffers() end, "Find Buffers" }, -- find buffers
-    p = { function() builtin.diagnostics() end, "Find Diagnostics" }, -- find problems
+    d = { function() builtin.diagnostics() end, "Find Diagnostics" }, -- find problems
     ["ip"] = { function() telescope.extensions.project.project({}) end, "Find Within Project" }, -- find in projects, <C-s> to search a string
     ["sp"] = { function() builtin.builtin() end, "Show Available Pickers" }, -- show pickers
     ["vrc"] = { function() search_dotfiles() end, "Search VimRC" }

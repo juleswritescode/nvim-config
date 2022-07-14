@@ -102,6 +102,9 @@ M.on_attach = function(client, bufnr)
 	print("Attached language server: " .. client.name)
 end
 
+-- Add Language Server Name here if the formatting collides with null-ls/prettier or whatever.
+local clients_without_formatting = require "juleswritescode.helper".Set { "volar", "tsserver" }
+
 M.overwrite_capabilities = function(client)
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -110,7 +113,7 @@ M.overwrite_capabilities = function(client)
 		return
 	end
 
-	if client.name == 'tsserver' or client.name == 'volar' then
+	if clients_without_formatting[client.name] then
 		client.resolved_capabilities.document_formatting = false
 	end
 

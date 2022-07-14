@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -138,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/neon",
     url = "https://github.com/rafamadriz/neon"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -234,15 +244,15 @@ _G.packer_plugins = {
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["vim-bbye"] = {
+    loaded = true,
+    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/vim-bbye",
+    url = "https://github.com/moll/vim-bbye"
+  },
   ["vim-polyglot"] = {
     loaded = true,
     path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
-  },
-  ["vim-prettier"] = {
-    loaded = true,
-    path = "/Users/JulianDomke/.local/share/nvim/site/pack/packer/start/vim-prettier",
-    url = "https://github.com/prettier/vim-prettier"
   },
   ["which-key.nvim"] = {
     loaded = true,

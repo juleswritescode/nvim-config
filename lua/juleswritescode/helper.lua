@@ -40,4 +40,14 @@ M.map = function(tbl, fn)
     return t
 end
 
+M.Set = function(tablelist)
+    local set = {}
+
+    for _, l in ipairs(tablelist) do
+        set[l] = true
+    end
+
+    return set
+end
+
 return M

@@ -60,6 +60,7 @@ return packer.startup({
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     use 'anott03/nvim-lspinstall'
+    use "jose-elias-alvarez/null-ls.nvim"
 
     -- Autocompletion
     use 'hrsh7th/nvim-cmp'
@@ -82,7 +83,6 @@ return packer.startup({
     use "numToStr/Comment.nvim"
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use "windwp/nvim-autopairs"
-    use { 'prettier/vim-prettier', run = 'yarn install' }
 
     -- nerd tree
     use 'kyazdani42/nvim-web-devicons'
@@ -90,6 +90,10 @@ return packer.startup({
 
     -- whichkey
     use 'folke/which-key.nvim'
+
+    -- bufferline
+    use "akinsho/bufferline.nvim"
+    use "moll/vim-bbye"
 
     -- setup plugins after downloading packer
     if PACKER_BOOTSTRAP then
