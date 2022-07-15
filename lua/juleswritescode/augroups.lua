@@ -1,27 +1,32 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-YankGroup = augroup('YankGroup', {})
+GeneralSettings = augroup("GeneralSettings", {})
 
-autocmd('TextYankPost', {
-  group = YankGroup,
-  pattern = '*',
-  callback = function()
-    vim.highlight.on_yank({
-      higroup = 'IncSearch',
-      timeout = 40
-    })
-  end,
+autocmd("FileType", {
+	group = GeneralSettings,
+	pattern = { "qf", "help", "man", "lspinfo" },
+	callback = function()
+		vim.cmd([[ nnoremap <silent> <buffer> q :close<CR> ]])
+	end,
 })
 
-FormatGroup = augroup('FormatGroup', {})
+YankGroup = augroup("YankGroup", {})
 
-autocmd({ 'BufWritePre' }, {
-  group = FormatGroup,
-  pattern = { '*' },
-  callback = function()
-    vim.lsp.buf.formatting_sync()
-  end
+autocmd("TextYankPost", {
+	group = YankGroup,
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = 40,
+		})
+	end,
 })
 
-LspGroup = augroup('LspGroup', {})
+vim.cmd([[
+	augroup _alpha
+		autocmd!
+		autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
+	augroup end
+]])

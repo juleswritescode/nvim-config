@@ -6,3 +6,4 @@ end
 
 require "juleswritescode.lsp.installer"
 require "juleswritescode.lsp.handlers".setup()
+require "juleswritescode.lsp.null-ls"

@@ -14,23 +14,20 @@ if not config_status_ok then
   return
 end
 
-local servers = require "juleswritescode.helper".map(
-  lsp_installer.get_installed_servers(),
-  function(s) return s.name end
-)
+local servers = lsp_installer.get_installed_servers()
 
 for _, server in pairs(servers) do
 
   local opts = {
     on_attach = require("juleswritescode.lsp.handlers").on_attach,
-    capabilities = require("juleswritescode.lsp.handlers").overwrite_capabilities(server)
+    capabilities = require("juleswritescode.lsp.handlers").capabilities,
   }
 
-  local has_custom_opts, server_custom_opts = pcall(require, "juleswritescode.lsp.settings." .. server)
+  local has_custom_opts, server_custom_opts = pcall(require, "juleswritescode.lsp.settings." .. server.name)
 
   if has_custom_opts then
     opts = vim.tbl_deep_extend("force", server_custom_opts.settings or {}, opts)
   end
 
-  lspconfig[server].setup(opts)
+  lspconfig[server.name].setup(opts)
 end

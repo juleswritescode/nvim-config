@@ -3,6 +3,9 @@ local M = {}
 M.settings = {
   settings = {
     Lua = {
+      format = {
+        enable = false -- done by style lua
+      },
       diagnostics = {
         globals = { "vim" }
       },

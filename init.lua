@@ -1,17 +1,22 @@
-require "juleswritescode.settings"
-require "juleswritescode.plugins"
-require "juleswritescode.whichkey"
-require "juleswritescode.keymaps"
-require "juleswritescode.colorscheme"
-require "juleswritescode.lsp"
-require "juleswritescode.cmp"
-require "juleswritescode.telescope"
-require "juleswritescode.treesitter"
-require "juleswritescode.treesitter-context"
-require "juleswritescode.augroups"
-require "juleswritescode.autopairs"
-require "juleswritescode.comment"
-require "juleswritescode.nvimtree"
-require "juleswritescode.gitsigns"
-require "juleswritescode.bufferline"
-require "juleswritescode.null-ls"
+require("juleswritescode.settings")
+require("juleswritescode.plugins")
+require("juleswritescode.impatient")
+require("juleswritescode.whichkey")
+require("juleswritescode.keymaps")
+require("juleswritescode.colorscheme")
+require("juleswritescode.lsp")
+require("juleswritescode.cmp")
+require("juleswritescode.telescope")
+require("juleswritescode.treesitter")
+require("juleswritescode.treesitter-context")
+require("juleswritescode.augroups")
+require("juleswritescode.autopairs")
+require("juleswritescode.comment")
+require("juleswritescode.nvimtree")
+require("juleswritescode.gitsigns")
+require("juleswritescode.bufferline")
+require("juleswritescode.toggleterm")
+require("juleswritescode.indentline")
+require("juleswritescode.lualine")
+require("juleswritescode.trouble")
+require("juleswritescode.alpha")
