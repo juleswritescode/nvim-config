@@ -161,6 +161,8 @@ local helper = require("juleswritescode.helper")
 local clients_without_formatting = helper.Set({
 	"tsserver",
 	"sumneko_lua",
+	"jsonls",
+	"rust_analyzer",
 })
 
 M.on_attach = function(client, bufnr)
