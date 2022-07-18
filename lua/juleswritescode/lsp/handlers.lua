@@ -163,6 +163,7 @@ local clients_without_formatting = helper.Set({
 	"sumneko_lua",
 	"jsonls",
 	"rust_analyzer",
+	"volar",
 })
 
 M.on_attach = function(client, bufnr)
