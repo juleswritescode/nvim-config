@@ -1,5 +1,4 @@
 if vim.g.vscode then
-	require("juleswritescode.vscode.keymaps")
 	print("No Lua for VSCODE!")
 	return
 end
