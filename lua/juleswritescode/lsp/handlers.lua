@@ -164,6 +164,7 @@ local clients_without_formatting = helper.Set({
 	"jsonls",
 	"rust_analyzer",
 	"volar",
+	"sqls",
 })
 
 M.on_attach = function(client, bufnr)

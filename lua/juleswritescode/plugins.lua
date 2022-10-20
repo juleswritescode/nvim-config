@@ -112,6 +112,11 @@ return packer.startup({
 		-- trouble, diagnostics window
 		use("folke/trouble.nvim")
 
+		-- Debugger
+		use("mfussenegger/nvim-dap")
+		use("rcarriga/nvim-dap-ui")
+		use("theHamsta/nvim-dap-virtual-text")
+
 		-- setup plugins after downloading packer
 		if PACKER_BOOTSTRAP then
 			require("packer").sync()

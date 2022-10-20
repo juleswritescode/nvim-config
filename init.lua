@@ -1,4 +1,11 @@
 require("juleswritescode.settings")
+
+if vim.g.vscode then
+	require("juleswritescode.vscode.keymaps")
+	print("No Lua for VSCODE!")
+	return
+end
+
 require("juleswritescode.plugins")
 require("juleswritescode.impatient")
 require("juleswritescode.whichkey")
@@ -20,3 +27,4 @@ require("juleswritescode.indentline")
 require("juleswritescode.lualine")
 require("juleswritescode.trouble")
 require("juleswritescode.alpha")
+require("juleswritescode.dap")

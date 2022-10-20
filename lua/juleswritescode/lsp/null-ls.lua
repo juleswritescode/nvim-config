@@ -31,12 +31,13 @@ local code_actions = null_ls.builtins.code_actions
   Arguments:
   :NullLsInfo -- get sources for buffer
 --]]
-
 local sources = {
 	formatting.stylua,
 	formatting.prettier,
 	formatting.rustfmt,
-	formatting.pg_format,
+	formatting.pg_format.with({
+		extra_args = { "-f", "1", "-u", "1", "-U", "1", "-k" },
+	}),
 	-- diagnostics.eslint, tsserver will take care of this
 	code_actions.eslint,
 }
